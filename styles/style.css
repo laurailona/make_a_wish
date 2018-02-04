@@ -9,6 +9,7 @@ h1 {
 	padding: 0;
 	font-size: 3.5rem;
 	font-weight: 300;
+	text-align: center;
 }
 
 /* HEADER AND NAVIGATION */
@@ -84,9 +85,15 @@ main {
 	background-color: #1f313b;
 	width: 100%;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-around;
 	align-items: flex-start;
+}
+
+@media only screen and (min-width: 800px) {
+	.main-content {
+		flex-direction: row;
+	}
 }
 
 .main-content-flex {
@@ -108,11 +115,17 @@ main {
 
 .post-container {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: center;
-	align-items: flex-start;
-	flex-wrap: wrap;
+	align-items: center;
 	margin: 0;
+}
+
+@media only screen and (min-width: 1000px) {
+	.post-container {
+		flex-direction: row;
+		align-items: flex-start;
+	}
 }
 
 .post {
@@ -234,6 +247,7 @@ footer {
 
 .footer-right {
 	text-align: right;
+	overflow: hidden;
 }
 
 .contact-form {

@@ -3,20 +3,21 @@
 //Requires the id of the DOM element where you want the typed text to appear.
 //default is #twe-typed-text
 
-//Will run infinitely, unless time is specified
+//requires css stylesheet typewriter.css to be called for cursor blinking to work, cursor needs to have class "cursor"
 
-var typeWriterEffect = function(textArray = ["Clean, hand-written code.", "Creative ideas.", "Beautiful design.", "User-friendly interface."], domelement = "twe-typed-text", time = "Infinite") {
+var typeWriterEffect = function(textArray = ["Clean, hand-written code.", "Creative ideas.", "Beautiful design.", "User-friendly interface."], domelement = "twe-typed-text") {
 	
 	let textInputField = document.getElementById(domelement);
-	console.log(domelement); //check if right DOM element is selected
 	let textInput = "";
 	let arrayPosition = 0;
 	let currentLetter;
+	let originalString;
 	
 	
 	function changeArray(){
 		(function chooseText() {
-			textInput = textArray[arrayPosition];
+			originalString = textArray[arrayPosition];
+			textInput = originalString + "             "; //space adds pause at the end and gives cursor time to blink
 		}());
 		(function moveArrayPosition() {
 			if (arrayPosition < textArray.length - 1) {
@@ -27,25 +28,28 @@ var typeWriterEffect = function(textArray = ["Clean, hand-written code.", "Creat
 			}
 		}());
 		direction = "forwards";
-		console.log(textInput); //check if this is working
 	};
 
 	let stringArrayPosition = 0;
 	let typedText = [];
 	let direction = "forwards";
+	let cursor = document.getElementById("cursor");
 	
 	changeArray();
 	function typeString() {
+		if(typedText.length >= originalString.length) {
+			cursor.classList.add("cursor");
+		}
+		else {
+			cursor.classList.remove("cursor");
+		}
 		let stringArray = textInput.split("");
-		console.log(stringArray); //check if this is working
 		
 		(function chooseLetter() {
 			currentLetter = stringArray[stringArrayPosition];
-			console.log(currentLetter); //check if its choosing the right letter
 		}());
 
 		(function typeLetter() {
-			console.log(typeof typedText);
 			if(direction === "forwards"){
 				typedText.push(currentLetter);
 				textInputField.textContent = typedText.join("");
