@@ -8,16 +8,15 @@
 var typeWriterEffect = function(textArray = ["Clean, hand-written code.", "Creative ideas.", "Beautiful design.", "User-friendly interface."], domelement = "twe-typed-text", time = "Infinite") {
 	
 	let textInputField = document.getElementById(domelement);
-	let textInput;
+	console.log(domelement); //check if right DOM element is selected
+	let textInput = "";
 	let arrayPosition = 0;
+	let currentLetter;
 	
 	
-	function changeText(){
+	function changeArray(){
 		(function chooseText() {
 			textInput = textArray[arrayPosition];
-		}());
-		(function addText() {
-			textInputField.textContent = textInput;
 		}());
 		(function moveArrayPosition() {
 			if (arrayPosition < textArray.length - 1) {
@@ -27,23 +26,51 @@ var typeWriterEffect = function(textArray = ["Clean, hand-written code.", "Creat
 				arrayPosition = 0;
 			}
 		}());
+		direction = "forwards";
+		console.log(textInput); //check if this is working
 	};
 
-	setInterval(changeText, 3000);
+	let stringArrayPosition = 0;
+	let typedText = [];
+	let direction = "forwards";
+	
+	changeArray();
+	function typeString() {
+		let stringArray = textInput.split("");
+		console.log(stringArray); //check if this is working
+		
+		(function chooseLetter() {
+			currentLetter = stringArray[stringArrayPosition];
+			console.log(currentLetter); //check if its choosing the right letter
+		}());
 
+		(function typeLetter() {
+			console.log(typeof typedText);
+			if(direction === "forwards"){
+				typedText.push(currentLetter);
+				textInputField.textContent = typedText.join("");
+				stringArrayPosition++;
+				if(stringArrayPosition < textInput.length) {
+					direction = "forwards";
+				}
+				else{
+					direction = "backwards";
+				}
+			}
+			else {
+				if(stringArrayPosition > 0) {
+					typedText.pop();
+					textInputField.textContent = typedText.join("");
+					stringArrayPosition--;
+				}
+				else {
+					changeArray();
+				}
+			}
+			
+		}());
+	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+	setInterval(typeString, 100);
 
 };
