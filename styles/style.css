@@ -195,27 +195,40 @@ main {
 	background-color: #583f55;
 	width: 100%;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
 }
 
-.final-content-left {
-	padding: 2rem;
-	width: 60%;
+.final-content-left, .final-content-right {
+	width: 90%;
+	padding: 1rem;
+	text-align: center;
 }
 
-.final-content-right {
-	padding: 2rem;
-	width: 30%;
-	text-align: center;
+.final-content-left p {
+	text-align: left;
+}
+
+@media only screen and (min-width: 800px) {
+	.final-content {
+		flex-direction: row;
+	}
+
+	.final-content-left {
+		width: 60%;
+	}
+
+	.final-content-right {
+		width: 30%;
+	}
 }
 
 .find-out-more {
 	background-color: #fff;
 	color: #583f55;
 	border: 0;
-	border-radius: 0.5rem;
+	border-radius: 15px;
 	padding: 1rem;
 	font-size: 2rem;
 	font-weight: 300;
@@ -231,31 +244,70 @@ footer {
 	background-image: url("../images/sky_bottom.jpg");
 	background-size: cover;
 	background-attachment: fixed;
+	text-align: center;
 
 }
 
 .main-footer {
 	width: 100%;
 	display: flex;
+	flex-direction: column;
 	justify-content: space-around;
 	align-items: flex-start;
 }
-
 .footer-flex {
-	width: 30%;
+	width: 100%;
+}
+
+@media only screen and (min-width: 800px) {
+	.main-footer {
+		flex-direction: row;
+	}
+
+	.footer-flex {
+		width: 30%
+	}
+
+	footer {
+		text-align: left;
+	}
 }
 
 .footer-right {
-	text-align: right;
+	text-align: center;
 	overflow: hidden;
 }
 
 .contact-form {
-	text-align: right;
+	text-align: center;
 }
 
 .copyright-section {
 	text-align: center;
 	margin: 0;
 	padding: 0.5rem;
+}
+
+/* Contact Form */
+.contact-form input[type=text], .contact-form textarea{
+	background-color: #121A26;
+	border: none;
+	border-radius: 15px;
+	padding: 0.5rem;
+	margin-bottom: 0.3rem;
+	color: #ccc;
+	width: 90%;
+}
+
+.contact-form textarea {
+	height: 100px;
+}
+
+.contact-form input[type=submit] {
+	border: none;
+	border-radius: 15px;
+	padding: 0.5rem;
+	background-color: #ccc;
+	color: #121A26;
+	width: 90%;
 }

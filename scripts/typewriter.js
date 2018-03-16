@@ -1,6 +1,6 @@
-//Requires an array of strings as a parameter, we have a default one set if no array is specified
+//Takes an array of strings as a parameter, we have a default one set if no array is specified
 
-//Requires the id of the DOM element where you want the typed text to appear.
+//Takes the id of the DOM element where you want the typed text to appear.
 //default is #twe-typed-text
 
 //requires css stylesheet typewriter.css to be called for cursor blinking to work, cursor needs to have class "cursor"
