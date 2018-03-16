@@ -2,6 +2,7 @@ body {
 	margin: 0;
 	font-family: 'Montserrat', sans-serif;
 	color: #fff;
+	font-size: 16px;
 }
 
 h1 {
@@ -13,7 +14,6 @@ h1 {
 }
 
 /* HEADER AND NAVIGATION */
-
 header {
 	background-image: url("../images/sky_top.jpg");
 	background-size: cover;
@@ -119,6 +119,7 @@ main {
 	justify-content: center;
 	align-items: center;
 	margin: 0;
+	padding-right: 2rem;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -128,6 +129,10 @@ main {
 	}
 }
 
+/* desktop
+
+*/
+
 .post {
 	margin: 2rem 0 0 2rem;
 	width: 300px;
@@ -136,6 +141,7 @@ main {
 	position: relative;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
+	transition: 0.1s;
 }
 
 .overlay {
@@ -147,7 +153,7 @@ main {
 	position: absolute;
 	top: 250px;
 	overflow: hidden;
-	transition: 1s;
+	transition: 0.1s;
 }
 
 .overlay:hover {
@@ -155,6 +161,37 @@ main {
 	top: 0px;
 	border-top-right-radius: 5px;
 	border-top-left-radius: 5px;
+}
+
+/*
+.post {
+	width: 300px;
+	height: 300px;
+}
+
+.overlay {
+	top: 250px;
+	width: 280px;
+}
+
+.overlay:hover {
+	height: 300px;
+}
+*/
+@media only screen and (min-width: 500px) and (max-width: 1000px) {
+	.post {
+		width: 450px;
+		height: 450px;
+	}
+
+	.overlay {
+		top: 400px;
+		width: 430px;
+	}
+
+	.overlay:hover {
+		height: 450px;
+	}
 }
 
 .overlay h4 {
