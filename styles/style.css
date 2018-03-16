@@ -121,10 +121,15 @@ header {
 	position: relative;
 }
 
-.intro i {
-	font-size: 4rem;
+.intro button {
 	position: absolute;
 	bottom: 2rem;
+	background-color: transparent;
+	border: none;
+}
+
+.intro i {
+	font-size: 4rem;
 	color: #fff;
 	transition: 0.7s;
 }

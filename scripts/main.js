@@ -15,3 +15,9 @@ function showHide() {
     }
 }
 navButton.addEventListener("click", showHide);
+
+/* Smooth Scroll */
+var mainContent = document.getElementById("main-content");
+var arrowButton = document.getElementById("arrow-button");
+
+// Do this with jQuery or figure out how to do with Vanilla JS????
