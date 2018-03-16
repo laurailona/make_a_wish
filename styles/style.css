@@ -146,6 +146,15 @@ header {
 	font-size: 1.5rem;
 }
 
+.arrow-container {
+	display: flex;
+	justify-content: center;
+}
+
+.intro-flex {
+	padding: 0.5rem;
+}
+
 /* Main-content */
 
 main {
