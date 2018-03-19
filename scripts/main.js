@@ -1,10 +1,11 @@
-typeWriterEffect();
+$(document).ready(function(){
+  typeWriterEffect();
 
 /* Show-Hide NAVIGATION */
-var visible = false;
-var navButton = document.getElementById("show-hide-button");
-var topNav = document.getElementById("top-nav");
-function showHide() {
+  var visible = false;
+  var navButton = document.getElementById("show-hide-button");
+  var topNav = document.getElementById("top-nav");
+  function showHide() {
     if(visible) {
       topNav.classList.remove("show-nav");
       visible = false;
@@ -13,11 +14,23 @@ function showHide() {
       topNav.classList.add("show-nav");
       visible = true;
     }
-}
-navButton.addEventListener("click", showHide);
+  }
+  navButton.addEventListener("click", showHide);
 
-/* Smooth Scroll */
-var mainContent = document.getElementById("main-content");
-var arrowButton = document.getElementById("arrow-button");
+//jQuery smooth scrolling
+  $("a").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
 
-// Do this with jQuery or figure out how to do with Vanilla JS????
+      var hash = this.hash;
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+        window.location.hash = hash;
+      });
+    }
+  });
+
+});
