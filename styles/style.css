@@ -419,3 +419,10 @@ footer {
 	color: #121A26;
 	width: 90%;
 }
+
+/* Copyright Section */
+
+.copyright-section a, .copyright-section a:visited {
+	text-decoration: none;
+	color: #fff;
+}
