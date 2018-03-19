@@ -6,14 +6,14 @@
 //requires css stylesheet typewriter.css to be called for cursor blinking to work, cursor needs to have class "cursor"
 
 var typeWriterEffect = function(textArray = ["Clean, hand-written code.", "Creative ideas.", "Beautiful design.", "User-friendly interface."], domelement = "twe-typed-text") {
-	
+
 	let textInputField = document.getElementById(domelement);
 	let textInput = "";
 	let arrayPosition = 0;
 	let currentLetter;
 	let originalString;
-	
-	
+
+
 	function changeArray(){
 		(function chooseText() {
 			originalString = textArray[arrayPosition];
@@ -34,7 +34,7 @@ var typeWriterEffect = function(textArray = ["Clean, hand-written code.", "Creat
 	let typedText = [];
 	let direction = "forwards";
 	let cursor = document.getElementById("cursor");
-	
+
 	changeArray();
 	function typeString() {
 		if(typedText.length >= originalString.length) {
@@ -44,7 +44,7 @@ var typeWriterEffect = function(textArray = ["Clean, hand-written code.", "Creat
 			cursor.classList.remove("cursor");
 		}
 		let stringArray = textInput.split("");
-		
+
 		(function chooseLetter() {
 			currentLetter = stringArray[stringArrayPosition];
 		}());
@@ -71,7 +71,7 @@ var typeWriterEffect = function(textArray = ["Clean, hand-written code.", "Creat
 					changeArray();
 				}
 			}
-			
+
 		}());
 	}
 

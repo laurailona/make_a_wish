@@ -23,7 +23,7 @@ header {
 .menu-container {
   border: none;
   background-color: transparent;
-	position: absolute;
+	position: fixed;
 	top: 15px;
 	right: 1rem;
 	z-index: 1000;
