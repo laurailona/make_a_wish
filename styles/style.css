@@ -123,7 +123,7 @@ header {
 
 .intro button {
 	position: absolute;
-	bottom: 2rem;
+	bottom: 10vh;
 	background-color: transparent;
 	border: none;
 }
@@ -144,15 +144,6 @@ header {
 
 .typed-text-field {
 	font-size: 1.5rem;
-}
-
-.arrow-container {
-	display: flex;
-	justify-content: center;
-}
-
-.intro-flex {
-	padding: 0.5rem;
 }
 
 /* Main-content */
